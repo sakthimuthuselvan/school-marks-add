@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 85%;
+            margin: 0px auto;
+        }
+        table{
+            width: 100%;
+            margin-top: 50px;
+        }
+        th{
+            background-color: gray;
+            color: white;
+        }
+        td{
+            background-color: rgba(169, 169, 169, 0.439);
+        }
+        table,th,tr,td{
+            border: 1px solid white;
+            border-collapse: collapse;
+            padding: 10px 0px;
+            text-align: center;
+        }
+        button{
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin-top: 30px;
+        }
+        input{
+            width: 150px;
+            height: 20px;
+            
+        }
+        .input{
+            padding-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <section class="overall">
+        <div class="container">
+            <table id="table">
+                <tr>
+                    <th>Name</th>
+                    <th>tamil</th>
+                    <th>English</th>
+                    <th>maths</th>
+                    <th>science</th>
+                    <th>s.science</th>
+                    <th>total</th>
+                </tr>
+            </table>
+           <div class="input">
+                <input type="text" placeholder="name" id="name">
+                <input type="text" placeholder="tamil" id="tamil">
+                <input type="text" placeholder="English" id="english">
+                <input type="text" placeholder="maths" id="maths">
+                <input type="text" placeholder="science" id="science">
+                <input type="text" placeholder="s.science" id="s.science">
+                
+                <br>
+                <div>
+                <button onclick="btn()">submit</button>
+                
+        </div>
+        </div>
+
+    </section>
+    
+    <script>
+        let table=document.getElementById("table");
+        let name=document.getElementById("name")
+        let tamil=document.getElementById("tamil")
+        let english=document.getElementById("english")
+        let maths=document.getElementById("maths")
+        let science=document.getElementById("science")
+        let social=document.getElementById("s.science")
+       
+       let sum=0;
+       let add=0;
+       let add1=0;
+       let add2=0;
+       let add3=0;
+       let add4=0;
+
+       function btn(){
+
+        
+       let row= table.insertRow(table.length);
+        
+        let cell1=row.insertCell(0);
+        let cell2=row.insertCell(1);
+        let cell3=row.insertCell(2);
+        let cell4=row.insertCell(3);
+        let cell5=row.insertCell(4);
+        let cell6=row.insertCell(5);
+        let cell7=row.insertCell(6);
+        // let cell8=row.insertCell(7);
+ 
+       
+   
+           add+=tamil.value;
+           add1+=english.value;
+           add2+=maths.value;
+           add3+=science.value;
+           add4+=social.value;
+           console.log(add);
+
+        cell1.innerText=name.value
+       cell2.innerText=parseInt(add)
+       cell3.innerText=parseInt(add1)
+       cell4.innerText=parseInt(add2)
+       cell5.innerText=parseInt(add3)
+       cell6.innerText=parseInt(add4)
+       
+      sum+=parseInt(add);
+     sum+=parseInt(add1);
+     sum+=parseInt(add2);
+     sum+=parseInt(add3);
+      sum+=parseInt(add4);
+       
+        cell7.innerText=sum;
+
+        name.value=''
+        tamil.value=''
+        english.value=''
+        maths.value=''
+        science.value=''
+        social.value=''
+        sum=0;
+       add=0;
+      add1=0;
+      add2=0;
+      add3=0;
+      add4=0;
+      
+       }
+      
+    </script>
+</body>
+</html>
